@@ -1,0 +1,39 @@
+<!-- ! centered content -->
+<div class="flex justify-center items-center w-full h-full font-mono">
+  <!-- ! modal-box -->
+  <div
+    class="min-h-[200px] w-full max-w-[500px] bg-white rounded-md p-[35px] flex flex-col justify-center gap-4"
+  >
+    <!-- ! title -->
+    <h1 class="text-black text-2xl font-semibold">Create a new task</h1>
+
+    <div class="flex gap-2 justify-center items-center">
+      <p class="flex-grow">
+        <input
+          type="text"
+          placeholder="Enter the task name"
+          class="bg-slate-100 w-full pl-5 pr-5 pt-2 pb-2 focus:outline-green rounded-md"
+          #taskTitleInput
+        />
+      </p>
+    </div>
+
+    <div class="flex justify-end items-center gap-2">
+      <button
+        class="pl-5 pr-5 pt-2 pb-2 border-2 border-green rounded-md active:scale-95 cursor-pointer"
+        routerLink="/lists"
+      >
+        Go Back
+      </button>
+      <p
+        class="pl-5 pr-5 pt-2 pb-2 bg-light-green rounded-md active:scale-95 cursor-pointer"
+      >
+        <button class="select-none" (click)="createTask(taskTitleInput.value)">
+          Create
+        </button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- (click)="createTask(listTitleInput.value)" -->

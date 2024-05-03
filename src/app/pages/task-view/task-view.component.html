@@ -1,0 +1,50 @@
+<div class="flex justify-center items-center w-full h-full">
+  <div class="flex w-full h-full max-w-4xl max-h-[500px]">
+    <div
+      class="flex flex-col w-[250px] bg-white p-10 rounded-tl-lg rounded-bl-lg"
+    >
+      <h1 class="text-turquoise text-2xl font-bold font-mono">LISTS</h1>
+      <div class="flex flex-col mt-4 flex-grow">
+        <a
+          class="flex items-center pt-3 pb-3 pr-4 pl-4 rounded-md w-full text text-slate-600 mb-[5px] [&:not(.is-active)]:hover:bg-light active:bg-[#cff8ef] active:text-dark-green"
+          *ngFor="let list of lists"
+          [routerLink]="['/lists', list._id]"
+          routerLinkActive="is-active"
+        >
+          <p>{{ list.title }}</p>
+        </a>
+      </div>
+      <button
+        class="font-semibold bg-green p-2 rounded-md text-black active:scale-90 transition-all duration-100 ease-out select-none"
+        routerLink="/new-list"
+        routerLinkActive="is-active"
+      >
+        + New List
+      </button>
+    </div>
+    <div
+      class="flex flex-grow flex-col bg-slate-200 rounded-tr-lg rounded-br-lg p-10 relative"
+    >
+      <h1 class="text-turquoise text-2xl font-bold font-mono">TASKS</h1>
+
+      <!-- *[&:not[.complete]: this arbitrary value is ued to add the styling only when the complete class is not present in the class list] -->
+
+      <div
+        class="bg-white pt-[15px] pb-[15px] pr-[20px] pl-[20px] rounded-[5px] mt-4 [&:not(.complete)]:hover:shadow-md [&:not(.complete)]:hover:shadow-slate-500 [&:not(.complete)]:transition-all [&:not(.complete)]:duration-200 [&:not(.complete)]:ease-in [&:not(.complete)]:hover:cursor-pointer [&:not(.complete)]:active:scale-95"
+        *ngFor="let task of tasks"
+      >
+        <p>
+          {{ task.title }}
+        </p>
+      </div>
+
+      <button
+        class="font-semibold bg-green p-3 absolute bottom-4 rounded-md active:scale-90 transition-all duration-100 ease-out select-none w-fit right-4"
+        routerLink="./new-task"
+      >
+        <img src="../../../assets/add_icon.svg" alt="add task icon" />
+      </button>
+
+    </div>
+  </div>
+</div>

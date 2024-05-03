@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    html {
+        @apply bg-gradient-to-tr from-turquoise to-green
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    a {
+        @apply hover:cursor-pointer
+    }
+
+    .complete {
+        text-decoration: line-through;
+        opacity: 60%;
+    }
+
+    .is-active {
+        @apply bg-[#cff8ef]
+    }
+}
